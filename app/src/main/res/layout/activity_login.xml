@@ -25,22 +25,27 @@ tools:context=".LoginActivity">
             android:layout_gravity="center" />
 
         <EditText
+            android:id="@+id/loginEditEmail"
             android:layout_marginTop="20dp"
-            android:hint="@string/username_txt"
+            android:hint="@string/email_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/login_input_background"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:inputType="textEmailAddress"/>
 
         <EditText
+            android:id="@+id/loginEditPassword"
             android:layout_marginTop="10dp"
             android:hint="@string/password_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/login_input_background"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:inputType="textPassword"/>
 
         <Button
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"

@@ -25,6 +25,7 @@ class RegisterActivity : AppCompatActivity() {
         btnToLogin.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish();
         }
 
         val registerEditName: EditText = findViewById(R.id.registerEditName)
@@ -39,9 +40,11 @@ class RegisterActivity : AppCompatActivity() {
                 registerEditPassword.text.trim().toString().isNotEmpty() ||
                 registerEditConfirmPassword.text.trim().toString().isNotEmpty()){
 
-                createUser(registerEditEmail.text.trim().toString(), registerEditPassword.text.trim().toString())
-            }else if(registerEditPassword.text.trim().toString() != registerEditConfirmPassword.text.trim().toString()){
-                Toast.makeText(this, "As senhas não conferem!", Toast.LENGTH_LONG).show()
+                if(registerEditPassword.text.trim().toString() != registerEditConfirmPassword.text.trim().toString()){
+                    Toast.makeText(this, "As senhas não conferem!", Toast.LENGTH_LONG).show()
+                }else{
+                    createUser(registerEditEmail.text.trim().toString(), registerEditPassword.text.trim().toString())
+                }
             }else{
                 Toast.makeText(this, "Você deve preencher todos os campos corretamente!", Toast.LENGTH_LONG).show()
             }
@@ -49,13 +52,14 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun createUser(email:String, password:String){
+    private fun createUser(email:String, password:String){
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this){ task->
             if(task.isSuccessful){
                 Log.e("Task Message", "Successful...")
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finish();
             }else{
                 Log.e("Task Message", "Failed..." + task.exception)
             }
@@ -71,6 +75,7 @@ class RegisterActivity : AppCompatActivity() {
         if(currentUser != null){
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish();
         }
     }
 }
