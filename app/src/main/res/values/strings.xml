@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Alpha Noticias</string>
     <string name="username_txt">Usuário</string>
+    <string name="name_txt">Nome</string>
+    <string name="email_txt">Email</string>
     <string name="password_txt">Senha</string>
+    <string name="confirmpassword_txt">Confirmar Senha</string>
     <string name="signin_txt">Entrar</string>
     <string name="signup_txt">Resgistrar-se</string>
+    <string name="register_txt">Criar conta</string>
+    <string name="return_txt">Voltar</string>
 </resources>

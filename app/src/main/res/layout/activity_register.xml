@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_roxa"
+                android:layout_gravity="center" />
+
+            <EditText
+                android:id="@+id/registerEditName"
+                android:layout_marginTop="20dp"
+                android:hint="@string/name_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_input_background"
+                android:padding="10dp"/>
+
+            <EditText
+                android:id="@+id/registerEditEmail"
+                android:layout_marginTop="10dp"
+                android:hint="@string/email_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_input_background"
+                android:padding="10dp"
+                android:inputType="textEmailAddress"/>
+
+            <EditText
+                android:id="@+id/registerEditPassword"
+                android:layout_marginTop="10dp"
+                android:hint="@string/password_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_input_background"
+                android:padding="10dp"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:id="@+id/registerEditConfirmPassword"
+                android:layout_marginTop="10dp"
+                android:hint="@string/confirmpassword_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_input_background"
+                android:padding="10dp"
+                android:inputType="textPassword"/>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/register_txt"
+                android:textSize="21sp"
+                android:background="@drawable/button_background"/>
+
+            <TextView
+                android:id="@+id/btnToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="@string/return_txt"
+                android:textSize="21sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

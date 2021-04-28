@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "835122732472",
+    "project_id": "alpha-noticias-app",
+    "storage_bucket": "alpha-noticias-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:835122732472:android:fd210095c207e5b0e2034d",
+        "android_client_info": {
+          "package_name": "br.ufrn.imd.com.alphanoticias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "835122732472-2qjgn5hfglv0ptntcfsv0a5ik00n6jhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7KMJWviK0sM3XlXMoXtEkgkX7UaRwSJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "835122732472-2qjgn5hfglv0ptntcfsv0a5ik00n6jhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
