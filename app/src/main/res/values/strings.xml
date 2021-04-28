@@ -10,4 +10,7 @@
     <string name="register_txt">Criar conta</string>
     <string name="return_txt">Voltar</string>
     <string name="signout_txt">Sair</string>
+    <string name="nova_noticia_txt">CRIAR NOTÍCIA</string>
+    <string name="titulo_txt">Título</string>
+    <string name="descricao_txt">Descrição</string>
 </resources>
