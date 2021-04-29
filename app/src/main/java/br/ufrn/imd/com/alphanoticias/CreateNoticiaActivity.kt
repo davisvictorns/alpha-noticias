@@ -15,8 +15,6 @@ class CreateNoticiaActivity : AppCompatActivity() {
     lateinit var editTextTitulo: EditText
     lateinit var editTextDescricao: EditText
     lateinit var btnCreateNoticia: Button
-    /*lateinit var listView: ListView*/
-    lateinit var noticiaList: MutableList<Noticia>
     lateinit var database: FirebaseDatabase
     lateinit var ref: DatabaseReference
 
@@ -24,7 +22,6 @@ class CreateNoticiaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_noticia)
 
-        noticiaList = mutableListOf()
         database = FirebaseDatabase.getInstance()
         ref = database.getReference("noticias")
 
@@ -38,25 +35,6 @@ class CreateNoticiaActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        /*ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(p0: DataSnapshot) {
-                if (p0.exists()) {
-                    for (h in p0.children) {
-                        val noticia = h.getValue(Noticia::class.java)
-                        noticiaList.add(noticia!!)
-                    }
-
-                    val adapter = NoticiaAdapter(applicationContext, R.layout.noticias, noticiaList)
-                    listView.adapter = adapter
-                }
-            }
-
-            override fun onCancelled(p0: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })*/
     }
 
     private fun saveNoticia() {

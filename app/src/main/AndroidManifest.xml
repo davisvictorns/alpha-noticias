@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlphaNoticias">
-        <activity android:name=".CreateNoticiaActivity"></activity>
+        <activity android:name=".ConvidarActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".CreateNoticiaActivity">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity"/>
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustResize">

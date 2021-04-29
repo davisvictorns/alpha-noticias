@@ -9,26 +9,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/btnListarNoticias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/criar_noticia_txt" />
+            android:visibility="invisible"
+            android:layout_marginEnd="8dp"
+            android:text="@string/criar_noticia_txt"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:id="@+id/btnToConvidar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btn_convidar_txt"
+            android:background="@drawable/button_background" />
 
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="@string/signout_txt" />
+            android:text="@string/signout_txt"
+            android:background="@drawable/button_background" />
 
     </LinearLayout>
 
     <ListView
         android:id="@+id/listViewNoticias"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>

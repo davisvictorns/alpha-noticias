@@ -4,34 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        tools:srcCompat="@color/purple_200" />
-
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/textViewTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:paddingTop="20dp"
-            android:paddingLeft="20dp"/>
+        android:layout_height="wrap_content"
+        android:theme="@style/Widget.MaterialComponents.CardView"
+        android:layout_margin="8dp">
 
-        <TextView
-            android:id="@+id/textViewDescricao"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:padding="20dp" />
-    </LinearLayout>
+            android:orientation="vertical">
+
+            <!-- Media -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                app:srcCompat="@color/secondary"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/content_description_media"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textViewTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Titulo"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    />
+
+                <TextView
+                    android:id="@+id/textViewDescricao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Descricao"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    />
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLerNoticia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/news_action_1"
+                    android:visibility="visible"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEditarNoticia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/news_action_2"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:visibility="invisible"/>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExcluirNoticia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/news_action_3"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

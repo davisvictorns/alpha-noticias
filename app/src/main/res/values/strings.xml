@@ -15,4 +15,9 @@
     <string name="descricao_txt">Descrição</string>
     <string name="noticias_txt">Notícias</string>
     <string name="criar_noticia_txt">Criar notícia</string>
+    <string name="content_description_media">Thumbnail</string>
+    <string name="news_action_1">Ler</string>
+    <string name="news_action_2">Editar</string>
+    <string name="news_action_3">Excluir</string>
+    <string name="btn_convidar_txt">Convidar</string>
 </resources>

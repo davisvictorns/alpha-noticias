@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConvidarActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <!--Adicionar uploader de fotos -->
+
+            <!--Titulo-->
+            <EditText
+                android:id="@+id/editEmailConvidado"
+                android:layout_marginTop="20dp"
+                android:hint="@string/email_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_input_background"
+                android:textColor="@color/white"
+                android:padding="10dp"
+                android:inputType="textEmailAddress"
+                />
+
+            <!--botao de criar noticia-->
+            <Button
+                android:id="@+id/btnConvidar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/btn_convidar_txt"
+                android:textSize="21sp"
+                android:background="@drawable/button_background"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
