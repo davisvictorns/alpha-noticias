@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AlphaNoticias">
-        <activity android:name=".ConfigActivity"></activity>
+        <activity android:name=".DetalharNoticiaActivity"></activity>
+        <activity android:name=".ConfigActivity" />
         <activity android:name=".ConvidarActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
