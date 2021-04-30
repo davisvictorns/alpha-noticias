@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,34 +10,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnListarNoticias"
+            android:id="@+id/btnConfiguracoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:layout_marginEnd="8dp"
-            android:text="@string/criar_noticia_txt"
-            android:background="@drawable/button_background"/>
-
-        <Button
-            android:id="@+id/btnToConvidar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            android:layout_marginEnd="8dp"
-            android:text="@string/btn_convidar_txt"
-            android:background="@drawable/button_background" />
-
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/signout_txt"
-            android:background="@drawable/button_background" />
+            android:background="@drawable/button_background"
+            android:textAlignment="center"
+            app:icon="@android:drawable/ic_menu_preferences"
+            app:iconPadding="10dp"
+            app:iconTint="#FFFFFF"
+            app:rippleColor="#FFFFFF"
+            app:strokeColor="#FFFFFF" />
 
     </LinearLayout>
 
@@ -44,5 +32,5 @@
         android:id="@+id/listViewNoticias"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp" />
 </LinearLayout>
