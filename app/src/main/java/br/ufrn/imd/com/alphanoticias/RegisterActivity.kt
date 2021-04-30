@@ -17,6 +17,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var btnToLogin : TextView
     private lateinit var auth: FirebaseAuth
     private lateinit var refConvites: DatabaseReference
+    var convidado: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +41,8 @@ class RegisterActivity : AppCompatActivity() {
         val registerEditPassword: EditText = findViewById(R.id.registerEditPassword)
         val registerEditConfirmPassword: EditText = findViewById(R.id.registerEditConfirmPassword)
 
+        val emailConvidado = registerEditEmail.text.trim().toString()
+
         val btnRegister: Button = findViewById(R.id.btn_register)
         btnRegister.setOnClickListener {
             if(registerEditName.text.trim().toString().isNotEmpty() ||
@@ -55,8 +58,24 @@ class RegisterActivity : AppCompatActivity() {
                     refConvites.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(p0: DataSnapshot) {
                             if (p0.exists()) {
-                                val convite = p0.child(registerEditEmail.text.trim().toString()).getValue(Convite::class.java)
-                                Log.d("RegisterActivity", "Got value $convite")
+                                for (h in p0.children) {
+                                    var convite = h.getValue(Convite::class.java)
+                                    Log.d("RegisterActivity", "Invite ${convite?.email}")
+                                    Log.d("RegisterActivity", "Guest ${registerEditEmail.text.trim().toString()}")
+
+                                    if (convite != null) {
+                                        if(convite.email == registerEditEmail.text.trim().toString()){
+                                            convite.aceito = true;
+                                            convidado = true
+
+                                            conviteAceito(convite)
+                                            createUser(registerEditEmail.text.trim().toString(), registerEditPassword.text.trim().toString())
+                                        }
+                                    }
+                                }
+                                if(convidado == false){
+                                    Toast.makeText(thisRef, "Infelizmente você ainda não foi convidado!", Toast.LENGTH_LONG).show()
+                                }
                             }else{
                                 Toast.makeText(thisRef, "Infelizmente você ainda não foi convidado!", Toast.LENGTH_LONG).show()
                                 Log.d("RegisterActivity", "Não há registros em convites")
@@ -68,13 +87,14 @@ class RegisterActivity : AppCompatActivity() {
                         }
 
                     })
-                    //createUser(registerEditEmail.text.trim().toString(), registerEditPassword.text.trim().toString())
                 }
             }else{
                 Toast.makeText(this, "Você deve preencher todos os campos corretamente!", Toast.LENGTH_LONG).show()
             }
 
         }
+
+        convidado = false
     }
 
     private fun createUser(email:String, password:String){
@@ -115,6 +135,12 @@ class RegisterActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish();
+        }
+    }
+
+    private fun conviteAceito(convite: Convite){
+        refConvites.child(convite.id).setValue(convite).addOnCompleteListener{
+            Log.d("RegisterActivity", "Convite Aceito!")
         }
     }
 }
