@@ -30,4 +30,5 @@
     <string name="visualizar_usuarios">Visualizar usuários</string>
     <string name="lista_de_usuarios_tit">Lista de Usuários</string>
     <string name="config_text">config</string>
+    <string name="menu_txt">MENU</string>
 </resources>

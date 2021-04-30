@@ -25,8 +25,7 @@
         <ImageView
             android:id="@+id/imageViewer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo_roxa" />
+            android:layout_height="150dp" />
 
         <ScrollView
             android:id="@+id/scroller_id"
@@ -55,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="10dp"
-                android:text="AUTOR" />
+                android:text="Criado em: " />
 
             <TextView
                 android:id="@+id/txt_dthr_publicacao"

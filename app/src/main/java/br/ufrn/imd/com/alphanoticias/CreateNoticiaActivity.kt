@@ -53,7 +53,8 @@ class CreateNoticiaActivity : AppCompatActivity() {
 
         btnCreateNoticia.setOnClickListener {
             uploadImageToFirebaseStorage()
-
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }

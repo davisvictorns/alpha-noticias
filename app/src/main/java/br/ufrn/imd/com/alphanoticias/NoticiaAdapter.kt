@@ -44,7 +44,7 @@ class NoticiaAdapter(
         }
 
         textViewTitulo.text = noticia.titulo
-        textViewDescricao.text = noticia.descricao
+        textViewDescricao.text = noticia.descricao.take(50)+"..."
 
         if(noticia.urlImagem != ""){
             Picasso.get().load(noticia.urlImagem).into(imageViewThumbnail)
