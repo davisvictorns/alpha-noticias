@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarNoticiaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <!-- Adicionar uploader de fotos -->
+
+            <!--Titulo-->
+            <EditText
+                android:id="@+id/editTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/register_input_background"
+                android:hint="@string/titulo_txt"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+            <!--Descricao-->
+            <Button
+                android:id="@+id/editImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Editar Imagem" />
+
+            <EditText
+                android:id="@+id/editDescricao"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/register_input_background"
+                android:gravity="top"
+                android:hint="@string/descricao_txt"
+                android:inputType="text|textMultiLine"
+                android:padding="10dp"
+                android:textColor="@color/white" />
+
+            <!--botao de criar noticia-->
+            <Button
+                android:id="@+id/btn_edit_noticia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_background"
+                android:text="@string/editar_not_cia"
+                android:textSize="21sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -55,7 +55,7 @@ class CreateNoticiaActivity : AppCompatActivity() {
         }
 
         val localDateTime: LocalDateTime = LocalDateTime.now()
-        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
+        val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
         val dataHotaAtual: String = formatter.format(localDateTime)
 
         val noticiaId = ref.push().key
