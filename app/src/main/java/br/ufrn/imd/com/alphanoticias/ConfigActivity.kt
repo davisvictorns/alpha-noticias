@@ -7,10 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 
 class ConfigActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -24,6 +21,8 @@ class ConfigActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_config)
         auth = FirebaseAuth.getInstance()
+        refUsers = FirebaseDatabase.getInstance().getReference("users")
+
         btnCriarNoticia = findViewById(R.id.btnCriarNoticia)
         btnCriarNoticia.setOnClickListener {
             val intent = Intent(this, CreateNoticiaActivity::class.java)
@@ -49,7 +48,6 @@ class ConfigActivity : AppCompatActivity() {
                 if (p0.exists()) {
                     val user = p0.child(auth.uid?: "").getValue(User::class.java)
                     Log.d("SelectUsuarioMain", "Got value $user")
-                    userCategory = user?.category.toString()
                     userCategory = user?.category.toString()
                     if (userCategory != "viewer"){
                         btnCriarNoticia.visibility = View.VISIBLE;
