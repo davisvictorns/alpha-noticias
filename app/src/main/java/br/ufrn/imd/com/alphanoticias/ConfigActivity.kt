@@ -13,6 +13,7 @@ class ConfigActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var refUsers: DatabaseReference
     private lateinit var btnCriarNoticia: Button
+    private lateinit var btnVisualizarUsuarios: Button
     private lateinit var btnToConvidar: Button
     private lateinit var btnLogout: Button
     private var userCategory = ""
@@ -26,6 +27,12 @@ class ConfigActivity : AppCompatActivity() {
         btnCriarNoticia = findViewById(R.id.btnCriarNoticia)
         btnCriarNoticia.setOnClickListener {
             val intent = Intent(this, CreateNoticiaActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnVisualizarUsuarios = findViewById(R.id.btnVisualizarUsuarios)
+        btnVisualizarUsuarios.setOnClickListener {
+            val intent = Intent(this, VisualizarUsuariosActivity::class.java)
             startActivity(intent)
         }
 
@@ -51,6 +58,7 @@ class ConfigActivity : AppCompatActivity() {
                     userCategory = user?.category.toString()
                     if (userCategory != "viewer"){
                         btnCriarNoticia.visibility = View.VISIBLE;
+                        btnVisualizarUsuarios.visibility = View.VISIBLE;
                     }
                 }
             }

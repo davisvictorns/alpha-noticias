@@ -32,11 +32,6 @@
                 android:textColor="@color/white" />
 
             <!--Descricao-->
-            <Button
-                android:id="@+id/editImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Editar Imagem" />
 
             <EditText
                 android:id="@+id/editDescricao"

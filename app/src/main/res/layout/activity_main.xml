@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:gravity="center"
+        android:gravity="right"
         android:orientation="horizontal">
 
         <Button
@@ -19,12 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:textAlignment="center"
-            app:icon="@android:drawable/ic_menu_preferences"
-            app:iconPadding="10dp"
-            app:iconTint="#FFFFFF"
-            app:rippleColor="#FFFFFF"
-            app:strokeColor="#FFFFFF" />
+            android:text="@string/config_text"/>
 
     </LinearLayout>
 

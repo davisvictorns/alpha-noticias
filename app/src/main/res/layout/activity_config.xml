@@ -29,6 +29,15 @@
                 android:text="@string/criar_noticia_txt" />
 
             <Button
+                android:id="@+id/btnVisualizarUsuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:visibility="invisible"
+                android:background="@drawable/button_background"
+                android:text="@string/visualizar_usuarios" />
+
+            <Button
                 android:id="@+id/btnToConvidar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

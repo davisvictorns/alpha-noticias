@@ -21,6 +21,7 @@
 
             <!-- Media -->
             <ImageView
+                android:id="@+id/imageViewThumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="194dp"
                 app:srcCompat="@color/secondary"

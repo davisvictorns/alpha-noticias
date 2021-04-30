@@ -1,9 +1,11 @@
 package br.ufrn.imd.com.alphanoticias
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
+import com.squareup.picasso.Picasso
 
 class DetalharNoticiaActivity : AppCompatActivity() {
     private lateinit var refNoticias: DatabaseReference
@@ -26,6 +28,7 @@ class DetalharNoticiaActivity : AppCompatActivity() {
 
                     val txtTituloNoticia: TextView = findViewById(R.id.txt_titulo_noticia)
                     val txtDescricaoNoticia: TextView = findViewById(R.id.txt_detalhe_noticia)
+                    val imageViewer: ImageView = findViewById(R.id.imageViewer)
                     val txtAutorNoticia: TextView = findViewById(R.id.txt_autor_noticia)
                     val txtDthrPublicacao: TextView = findViewById(R.id.txt_dthr_publicacao)
 
@@ -36,6 +39,10 @@ class DetalharNoticiaActivity : AppCompatActivity() {
                         txtDescricaoNoticia.text = noticia.descricao
                         if (user != null) txtAutorNoticia.text = user.name
                         txtDthrPublicacao.text = noticia.criada_as
+
+                        if(noticia.urlImagem != "") {
+                            Picasso.get().load(noticia.urlImagem).into(imageViewer)
+                        }
                     }
                 }
             }

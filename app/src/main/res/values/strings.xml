@@ -27,4 +27,7 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="editar_not_cia">EDITAR NOTÍCIA</string>
+    <string name="visualizar_usuarios">Visualizar usuários</string>
+    <string name="lista_de_usuarios_tit">Lista de Usuários</string>
+    <string name="config_text">config</string>
 </resources>
